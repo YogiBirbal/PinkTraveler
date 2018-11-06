@@ -1,0 +1,108 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Stonypedia</title>
+  </head>
+
+  <body>
+
+    <nav>
+      <div class="nav-wrapper">
+        <% if(user == null) {%>
+          <a href="#" class="brand-logo">Stonypedia</a>
+        <%} else {%>
+          <a href="/index" class="brand-logo">Stonypedia</a>
+        <%}%>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/index">Home</a></li>
+          <li><a href="/transportation">Transportation</a></li>
+          <li><a href="/accommodations">Accommodations</a></li>
+          <li><a href="/activities">Activities</a></li>
+          <li><a href="/about">About Us</a></li>
+          <% if(user == null) {%>
+            <li><a href="/login">Log In</a></li>
+            <li><a href="/signup">Sign Up</a></li>
+          <%} else {%>
+            <li><a href="/logout">Log Out</a></li>
+          <%}%>
+        </ul>
+      </div>
+    </nav>
+
+
+
+    <div class="row">
+      <div class="col s12 m12">
+        <h1>Transportations</h1>
+        <div class="row">
+          <div class="col s12 m12">
+            <div class="card">
+              <div class="card-content">
+                <form method="POST" action="/traSearch">
+                  <h6>Destination Location:</h6>
+                	<label>City</label>
+                  <input type="text" name="dCity">
+                  <br>
+                  <label>State</label>
+                  <input type="text" name="dState">
+                  <br>
+                  <label>Country</label>
+                  <input type="text" name="dCountry">
+                  <br>
+                  <h6>Source Location:</h6>
+                  <label>City</label>
+                  <input type="text" name="sCity">
+                  <br>
+                  <label>State</label>
+                  <input type="text" name="sState">
+                  <br>
+                  <label>Country</label>
+                  <input type="text" name="sCountry">
+                  <br>
+                  <h6>Means of Transportation:</h6>
+                  <br>
+
+                   <p>
+      <label>
+        <input name="type" type="radio" value="Flight" checked />
+        <span>Flight</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="type"  type="radio" value="Cruise" />
+        <span>Cruise</span>
+      </label>
+    </p>
+        <p>
+      <label>
+        <input name="type"  type="radio" value="Car" />
+        <span>Car</span>
+      </label>
+    </p>
+<!--                   <input type="radio" name="type" value="Flight" checked="checked">
+                  <input type="radio" name="type" value="Cruise">
+                  <input type="radio" name="type" value="Car Rental"> -->
+                	<br><br>
+                	<input type="submit" value="Search">
+                </form>
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+           </div>
+              </div>
+
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  </body>
+
+</html>
